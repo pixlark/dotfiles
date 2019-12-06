@@ -1,0 +1,7 @@
+;; Muffle re-declaration warning
+(locally
+ (declare #+sbcl(sb-ext:muffle-conditions cl:warning))
+		  (handler-bind (#+sbcl(cl:warning #'muffle-warning)) (setq x 1)))
+
+;; Quicklisp
+(load "~/quicklisp/setup.lisp")
